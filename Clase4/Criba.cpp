@@ -3,12 +3,12 @@
 using namespace std;
 
 const int N = 10;
-bool is_prime[N];
 
-void criba(){
+
+void criba(bool is_prime[]){
     // Suponiendo que todos los números son primos
     for(int i = 0; i < N; i++)
-        is_prime[N] = true;
+        is_prime[i] = true;  
 
     // Eliminando los casos base
     is_prime[0] = is_prime[1] = false;
@@ -33,7 +33,8 @@ bool comp_primo(int n){
 }
 
 int main(){
-    criba();
+    bool is_prime[N];
+    criba(is_prime);
     for(int i = 0; i<N; i++)
         cout << i << ' ' << is_prime[i] << endl;
     return 0;
